@@ -1,0 +1,113 @@
+# Registration
+### 
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "aswin",
+    "email": "aswin@gmail.com",
+    "password": "aswin123"
+}
+
+# Login
+### 
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "hari",
+    "password": "hari123"
+}
+
+###
+GET http://127.0.0.1:8000/users/
+Accept: application/json
+Authorization: Token c5ef276d74444ea5a2b91f78e5ef037eed492632
+
+
+### 
+POST http://127.0.0.1:8000/jwt_login/
+Content-Type: application/json
+
+{
+    "username": "hari",
+    "password": "hari123"
+}
+
+
+###
+POST http://127.0.0.1:8000/api/refresh/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ4Mjg2LCJpYXQiOjE3OTU1NDc5ODYsImp0aSI6Ijg3ZTQ0OWNkNTdjMTRkYzU5MDQ5YjZhOGQ3YjIyNmEyIiwidXNlcl9pZCI6IjEifQ.x-Lx2-WY4PHQEiQ8E73vKFelcyevYeXDfL3XlmKuNpc
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTYzNDM4NiwiaWF0IjoxNzk1NTQ3OTg2LCJqdGkiOiJmMGMzNDk5Njc2MmE0N2Q2YmU5YThhNTY1ZWU1NzRhMCIsInVzZXJfaWQiOiIxIn0.3h7dS0T7Xs3mRJi3wBuPS0MaQjdnyZ7DPP6vUUvZaUI"
+}
+
+
+###
+GET http://127.0.0.1:8000/events/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ4MzMwLCJpYXQiOjE3OTU1NDgwMzAsImp0aSI6IjZmMzJjNGFhYWY0MzQyYzNiNzU1ZjgzNGViYzEzNzk0IiwidXNlcl9pZCI6IjEifQ.tiMCl6vS5FrFNV3Kly_UVmupPbDRsFf48esOf6g1_Bs
+
+### 
+POST http://127.0.0.1:8000/events/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5MjE4LCJpYXQiOjE3OTU1NDg5MTgsImp0aSI6IjExYzY0Mjk5NGRlYzQxZTk4MTc0ZGIyZDFlZmJjYTJiIiwidXNlcl9pZCI6IjEifQ.m_D9dvUHVYPYmEXDNquZ6ANHQ8wuCY7H8yLjrfgzkPM
+
+{
+    "title": "Python Workshop",
+    "event_date": "2026-12-15",
+    "venue": "Edappally"
+}
+
+
+###
+GET http://127.0.0.1:8000/events/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5MjE4LCJpYXQiOjE3OTU1NDg5MTgsImp0aSI6IjExYzY0Mjk5NGRlYzQxZTk4MTc0ZGIyZDFlZmJjYTJiIiwidXNlcl9pZCI6IjEifQ.m_D9dvUHVYPYmEXDNquZ6ANHQ8wuCY7H8yLjrfgzkPM
+
+###
+PUT http://127.0.0.1:8000/events/1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ4NzQ2LCJpYXQiOjE3OTU1NDg0NDYsImp0aSI6IjQ3Y2NhYmNhZWYzYzQ3NDJiNmMxMThhZjAyNjE0Njc5IiwidXNlcl9pZCI6IjEifQ.EV8QdVmbXm--581LFp5zTc3ODBvcTdO5HTUgRtTVo-I
+
+{
+    "title" : "Tech meet",
+    "event_date" : "2026-12-15",
+    "venue" : "Kakkanad"
+}
+
+###
+DELETE http://127.0.0.1:8000/events/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5MjE4LCJpYXQiOjE3OTU1NDg5MTgsImp0aSI6IjExYzY0Mjk5NGRlYzQxZTk4MTc0ZGIyZDFlZmJjYTJiIiwidXNlcl9pZCI6IjEifQ.m_D9dvUHVYPYmEXDNquZ6ANHQ8wuCY7H8yLjrfgzkPM
+
+
+###
+GET http://127.0.0.1:8000/events/3/attendees/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5NTYwLCJpYXQiOjE3OTU1NDkyNjAsImp0aSI6IjA4ZTc4ZGVhNjA5YjRkOGI4MzAyMjJhZDlhODYwMjAxIiwidXNlcl9pZCI6IjEifQ.-JxhTY38bj4_ACAbkgwuEJWgWZjaCZ_-2sbQQnA2el0
+
+### 
+POST http://127.0.0.1:8000/events/3/attendees/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5MjE4LCJpYXQiOjE3OTU1NDg5MTgsImp0aSI6IjExYzY0Mjk5NGRlYzQxZTk4MTc0ZGIyZDFlZmJjYTJiIiwidXNlcl9pZCI6IjEifQ.m_D9dvUHVYPYmEXDNquZ6ANHQ8wuCY7H8yLjrfgzkPM
+
+{
+    "username" : "aswin"
+}
+
+
+###
+DELETE http://127.0.0.1:8000/events/3/attendees/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1NTQ5NTYwLCJpYXQiOjE3OTU1NDkyNjAsImp0aSI6IjA4ZTc4ZGVhNjA5YjRkOGI4MzAyMjJhZDlhODYwMjAxIiwidXNlcl9pZCI6IjEifQ.-JxhTY38bj4_ACAbkgwuEJWgWZjaCZ_-2sbQQnA2el0
+
+
+# Logout
+### 
+POST http://127.0.0.1:8000/jwt_logout/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTYzNDM4NiwiaWF0IjoxNzk1NTQ3OTg2LCJqdGkiOiJmMGMzNDk5Njc2MmE0N2Q2YmU5YThhNTY1ZWU1NzRhMCIsInVzZXJfaWQiOiIxIn0.3h7dS0T7Xs3mRJi3wBuPS0MaQjdnyZ7DPP6vUUvZaUI"
+}
